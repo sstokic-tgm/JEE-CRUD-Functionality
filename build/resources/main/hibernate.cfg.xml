@@ -10,16 +10,14 @@
 		<property name="hibernate.connection.username"></property>
 		<property name="hibernate.connection.password"></property>
 
-		<property name="show_sql">true</property>
+		<property name="dialect">com.enigmabridge.hibernate.dialect.SQLiteDialect</property>
 
-		<property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
-
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 
-		<mapping class="stokic.Person" />
+		<mapping class="stokic.EPerson" />
 	</session-factory>
 
 </hibernate-configuration> 

@@ -24,17 +24,17 @@ public class EPerson implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int nr;
 	
-	@NotNull
-	private String nachname;
+	private String lastname;
 	
-	@NotNull
-	private String vorname;
+	private String firstname;
 	
-	@NotNull
-	private int alter;
-	
-	public EPerson() {}
+	private int age;
 
+	public EPerson() {
+		
+		super();
+	}
+	
 	public int getNr() {
 		return nr;
 	}
@@ -43,27 +43,33 @@ public class EPerson implements Serializable {
 		this.nr = nr;
 	}
 
-	public String getNachname() {
-		return nachname;
+	public String getLastname() {
+		
+		return lastname;
 	}
 
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
+	public void setLastname(String lastname) {
+		
+		this.lastname = lastname;
 	}
 
-	public String getVorname() {
-		return vorname;
+	public String getFirstname() {
+		
+		return firstname;
 	}
 
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
+	public void setFirstname(String firstname) {
+		
+		this.firstname = firstname;
 	}
 
-	public int getAlter() {
-		return alter;
+	public int getAge() {
+		
+		return age;
 	}
 
-	public void setAlter(int alter) {
-		this.alter = alter;
+	public void setAge(int age) {
+		
+		this.age = age;
 	}
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Person Erstellen</title>
+</h:head>
+
+<h:body>
+	<f:view>
+
+		<h:form>
+			<p:panelGrid>
+
+				<p:row>
+					<p:column>
+						<h:outputLabel for="nachname" value="Nachname: " />
+					</p:column>
+					<p:column>
+						<p:inputText id="nachname" value="#{bPerson.lastname}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<h:outputLabel for="vorname" value="Vorname: " />
+					</p:column>
+					<p:column>
+						<p:inputText id="vorname" value="#{bPerson.firstname}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column>
+						<h:outputLabel for="alter" value="Alter: " />
+					</p:column>
+					<p:column>
+						<p:inputText id="alter" value="#{bPerson.age}" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column colspan="2" style="text-align: center;">
+						<h:commandButton value="Erstellen" action="#{bPerson.saveEPerson}" />
+					</p:column>
+				</p:row>
+
+			</p:panelGrid>
+
+		</h:form>
+
+		<br/>
+
+		<h:button value="Zurück" outcome="mainmenu" />
+
+	</f:view>
+</h:body>
+
+</html>

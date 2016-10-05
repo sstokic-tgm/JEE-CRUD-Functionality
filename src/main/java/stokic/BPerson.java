@@ -1,6 +1,6 @@
 package stokic;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.*;
 
@@ -13,14 +13,14 @@ import javax.faces.bean.*;
  * @version 0.1
  */
 
-@ManagedBean
+@ManagedBean(name="bPerson", eager = true)
 @RequestScoped
 public class BPerson {
 	
-	private String nachname, vorname;
-	private int alter;
+	private String lastname, firstname;
+	private int age;
 	
-	private ArrayList<EPerson> ePersonen;
+	private List<EPerson> ePersonen;
 	
 	public BPerson() {
 		
@@ -29,15 +29,24 @@ public class BPerson {
 	
 	public void readEPersonen() {
 		
+		DAPerson da_ePerson = new DAPerson();
 		
+		ePersonen = da_ePerson.read();
 	}
 	
 	public void saveEPerson() {
 		
+		DAPerson da_ePerson = new DAPerson();
+		EPerson ePerson = new EPerson();
 		
+		ePerson.setLastname(lastname);
+		ePerson.setFirstname(firstname);
+		ePerson.setAge(age);
+		
+		da_ePerson.save(ePerson);
 	}
 	
-	public void updateEPerson() {
+	/*public void updateEPerson() {
 		
 		
 	}
@@ -45,44 +54,44 @@ public class BPerson {
 	public void deleteEPerson() {
 		
 		
-	}
+	}*/
 
-	public String getNachname() {
+	public String getLastname() {
 		
-		return nachname;
+		return lastname;
 	}
 
-	public void setNachname(String nachname) {
+	public void setLastname(String lastname) {
 		
-		this.nachname = nachname;
+		this.lastname = lastname;
 	}
 
-	public String getVorname() {
+	public String getFirstname() {
 		
-		return vorname;
+		return firstname;
 	}
 
-	public void setVorname(String vorname) {
+	public void setFirstname(String firstname) {
 		
-		this.vorname = vorname;
+		this.firstname = firstname;
 	}
 
-	public int getAlter() {
+	public int getAge() {
 		
-		return alter;
+		return age;
 	}
 
-	public void setAlter(int alter) {
+	public void setAge(int age) {
 		
-		this.alter = alter;
+		this.age = age;
 	}
 
-	public ArrayList<EPerson> getePersonen() {
+	public List<EPerson> getePersonen() {
 		
 		return ePersonen;
 	}
 
-	public void setePersonen(ArrayList<EPerson> ePersonen) {
+	public void setePersonen(List<EPerson> ePersonen) {
 		
 		this.ePersonen = ePersonen;
 	}
