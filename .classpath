@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="FROM_GRADLE_MODEL" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" sourcepath="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-api/2.2.8-15/e9a5d9d58387ca2498572451f469a286cf400c6b/jsf-api-2.2.8-15.jar" sourcepath="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-api/2.2.8-15/db55e078701d452d3c2501553c444ebc926de622/jsf-api-2.2.8-15-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/org.primefaces/primefaces/5.2/491fefae8f5e45a05f1f8e431f216558407cd99a/primefaces-5.2.jar" sourcepath="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/org.primefaces/primefaces/5.2/c41be7026a714be6be5e158e14df764b2cf539cd/primefaces-5.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-impl/2.2.8-15/950d8e5fa67c3b3917fce6500310b9a9c9a53ea5/jsf-impl-2.2.8-15.jar" sourcepath="C:/Users/Stefan/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-impl/2.2.8-15/9be4ced8e70e6677aa880c86fbddce6814d1cbb9/jsf-impl-2.2.8-15-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
