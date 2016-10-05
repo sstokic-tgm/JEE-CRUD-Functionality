@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Personen ändern</title>
+
+	<!-- source: http://stackoverflow.com/questions/25877347/primefaces-growl-change-color-dynamically -->
+	<style>
+		div[id="form:growl-error_container"]>div {
+			background-color: red !important;
+		}
+		
+		div[id="form:growl-success_container"]>div {
+			background-color: green !important;
+		}
+	</style>
+
+</h:head>
+
+<h:body>
+	<f:view>
+
+		<h1>Personen</h1>
+
+		<h:form id="form">
+
+			<p:growl id="growl-error" showDetail="false" />
+			<p:growl id="growl-success" showDetail="false" />
+
+			<p:dataTable var="person" value="#{bPerson.ePersonen}"
+				editable="true">
+
+				<p:ajax event="rowEdit" listener="#{bPerson.onRowEdit}"
+					update=":form:growl-success" />
+				<p:ajax event="rowEditCancel" listener="#{bPerson.onRowCancel}"
+					update=":form:growl-error" />
+
+				<p:column headerText="Nr">
+					<h:outputText value="#{person.nr}" />
+				</p:column>
+
+				<p:column headerText="Nachname">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{person.lastname}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{person.lastname}" style="width: 100%;" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Vorname">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{person.firstname}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{person.firstname}" style="width: 100%;" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Alter">
+					<p:cellEditor>
+						<f:facet name="output">
+							<h:outputText value="#{person.age}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText value="#{person.age}" style="width: 100%;" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column style="width:32px">
+					<p:rowEditor />
+				</p:column>
+
+			</p:dataTable>
+
+		</h:form>
+
+		<br />
+
+		<h:button value="Zurück" outcome="mainmenu" />
+
+	</f:view>
+</h:body>
+
+</html>

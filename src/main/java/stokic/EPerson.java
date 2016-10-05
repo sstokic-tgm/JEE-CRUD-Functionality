@@ -30,10 +30,7 @@ public class EPerson implements Serializable {
 	
 	private int age;
 
-	public EPerson() {
-		
-		super();
-	}
+	public EPerson() { }
 	
 	public int getNr() {
 		return nr;

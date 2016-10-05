@@ -7,7 +7,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>Person erstellen</title>
+	<title>Personen löschen</title>
 	
 	<!-- source: http://stackoverflow.com/questions/25877347/primefaces-growl-change-color-dynamically -->
 	<style>
@@ -25,50 +25,42 @@
 <h:body>
 	<f:view>
 
+		<h1>Personen</h1>
+
 		<h:form id="form">
 
 			<p:growl id="growl-error" showDetail="false" />
 			<p:growl id="growl-success" showDetail="false" />
 
-			<p:panelGrid>
+			<p:dataTable var="person" value="#{bPerson.ePersonen}"
+				selection="#{bPerson.selectedPersonen}" rowKey="#{person.nr}">
 
-				<p:row>
-					<p:column>
-						<h:outputLabel for="nachname" value="Nachname: " />
-					</p:column>
-					<p:column>
-						<p:inputText id="nachname" value="#{bPerson.lastname}" />
-					</p:column>
-				</p:row>
+				<p:column selectionMode="multiple"
+					style="width:16px; text-align:center" />
 
-				<p:row>
-					<p:column>
-						<h:outputLabel for="vorname" value="Vorname: " />
-					</p:column>
-					<p:column>
-						<p:inputText id="vorname" value="#{bPerson.firstname}" />
-					</p:column>
-				</p:row>
+				<p:column headerText="Nr">
+					<h:outputText value="#{person.nr}" />
+				</p:column>
 
-				<p:row>
-					<p:column>
-						<h:outputLabel for="alter" value="Alter: " />
-					</p:column>
-					<p:column>
-						<p:inputText id="alter" value="#{bPerson.age}" />
-					</p:column>
-				</p:row>
+				<p:column headerText="Nachname">
+					<h:outputText value="#{person.lastname}" />
+				</p:column>
 
-				<p:row>
-					<p:column colspan="2" style="text-align: center;">
-						<h:commandButton value="Erstellen" action="#{bPerson.saveEPerson}" update=":form:growl-success" />
-					</p:column>
-				</p:row>
+				<p:column headerText="Vorname">
+					<h:outputText value="#{person.firstname}" />
+				</p:column>
 
-			</p:panelGrid>
+				<p:column headerText="Alter">
+					<h:outputText value="#{person.age}" />
+				</p:column>
+
+			</p:dataTable>
+
+			<br />
+
+			<h:commandButton value="Löschen" action="#{bPerson.deleteEPerson}" update=":form:growl-success" />
 
 		</h:form>
-
 		<br />
 
 		<h:button value="Zurück" outcome="mainmenu" />

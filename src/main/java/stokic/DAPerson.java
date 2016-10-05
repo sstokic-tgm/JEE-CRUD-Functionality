@@ -9,46 +9,60 @@ import org.hibernate.*;
  * transaction API.
  * 
  * @author Stefan Stokic
- * @version 0.1
+ * @version 0.3
  */
 
 public class DAPerson {
 
 	public List<EPerson> read() {
-		
+
 		List<EPerson> al_ePerson = null;
-		
+
 		Session s = HibernateUtil.getSession().openSession();
-		
+
 		s.beginTransaction();
-		
+
 		al_ePerson = s.createQuery("from EPerson").list();
-		
+
 		s.getTransaction().commit();
 		s.close();
-		
+
 		return al_ePerson;
 	}
-	
+
 	public void save(EPerson ePerson) {
-		
+
 		Session s = HibernateUtil.getSession().openSession();
-		
+
+		s.beginTransaction();
+
+		s.save(ePerson);
+
+		s.getTransaction().commit();
+		s.close();
+	}
+
+	public void update(EPerson ePerson) {
+
+		Session s = HibernateUtil.getSession().openSession();
+
 		s.beginTransaction();
 		
-		s.save(ePerson);
+		s.update(ePerson);
 		
 		s.getTransaction().commit();
 		s.close();
 	}
-	
-	public void update(EPerson ePerson) {
-		
-		
-	}
-	
+
 	public void delete(EPerson ePerson) {
+
+		Session s = HibernateUtil.getSession().openSession();
+
+		s.beginTransaction();
 		
+		s.delete(ePerson);
 		
+		s.getTransaction().commit();
+		s.close();
 	}
 }
