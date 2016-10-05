@@ -8,7 +8,7 @@
 
 <h:head>
 	<title>Person erstellen</title>
-	
+
 	<!-- source: http://stackoverflow.com/questions/25877347/primefaces-growl-change-color-dynamically -->
 	<style>
 		div[id="form:growl-error_container"]>div {
@@ -19,7 +19,7 @@
 			background-color: green !important;
 		}
 	</style>
-	
+
 </h:head>
 
 <h:body>
@@ -61,7 +61,8 @@
 
 				<p:row>
 					<p:column colspan="2" style="text-align: center;">
-						<h:commandButton value="Erstellen" action="#{bPerson.saveEPerson}" update=":form:growl-success" />
+						<h:commandButton value="Erstellen" action="#{bPerson.saveEPerson}"
+							update=":form:growl-success" />
 					</p:column>
 				</p:row>
 

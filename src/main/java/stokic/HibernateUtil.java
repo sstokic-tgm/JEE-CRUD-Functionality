@@ -15,14 +15,14 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
 
 	private static final SessionFactory sessionFactory = establishSessionFactory();
-	
+
 	private static SessionFactory establishSessionFactory() {
-		
+
 		return new Configuration().configure().buildSessionFactory();
-    }
-	
+	}
+
 	public static SessionFactory getSession() {
-		
+
 		return sessionFactory;
 	}
 }

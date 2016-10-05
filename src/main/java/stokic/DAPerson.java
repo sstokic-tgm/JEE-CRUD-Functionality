@@ -47,9 +47,9 @@ public class DAPerson {
 		Session s = HibernateUtil.getSession().openSession();
 
 		s.beginTransaction();
-		
+
 		s.update(ePerson);
-		
+
 		s.getTransaction().commit();
 		s.close();
 	}
@@ -59,9 +59,9 @@ public class DAPerson {
 		Session s = HibernateUtil.getSession().openSession();
 
 		s.beginTransaction();
-		
+
 		s.delete(ePerson);
-		
+
 		s.getTransaction().commit();
 		s.close();
 	}

@@ -8,7 +8,7 @@
 
 <h:head>
 	<title>Personen löschen</title>
-	
+
 	<!-- source: http://stackoverflow.com/questions/25877347/primefaces-growl-change-color-dynamically -->
 	<style>
 		div[id="form:growl-error_container"]>div {
@@ -19,7 +19,7 @@
 			background-color: green !important;
 		}
 	</style>
-	
+
 </h:head>
 
 <h:body>
@@ -58,7 +58,8 @@
 
 			<br />
 
-			<h:commandButton value="Löschen" action="#{bPerson.deleteEPerson}" update=":form:growl-success" />
+			<h:commandButton value="Löschen" action="#{bPerson.deleteEPerson}"
+				update=":form:growl-success" />
 
 		</h:form>
 		<br />
